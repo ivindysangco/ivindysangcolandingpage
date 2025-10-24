@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Claude Code
+.claude/
+
+# Obsidian
+.obsidian/
+
+# Working notes and reference files
+Content.md
+Critique.md
+*.jpeg

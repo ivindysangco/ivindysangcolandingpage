@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technical Blog - Ivin Dysangco</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">Ivin Dysangco</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" style="min-height: 300px; padding: 3rem 2rem;">
+        <div class="hero-content" style="display: block; text-align: center;">
+            <div class="hero-text">
+                <h1 class="headline" style="font-size: 2.5rem;">Technical Blog</h1>
+                <p class="subheadline">Insights on system architecture, technical decisions, and lessons learned</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-posts" style="background: var(--light-bg); padding: 5rem 2rem;">
+        <div class="container">
+            <!-- Project Talargos -->
+            <div class="project-section" style="margin-bottom: 3rem;">
+                <h2 onclick="toggleProject('talargos')" style="cursor: pointer; user-select: none; display: flex; align-items: center; gap: 0.5rem; font-size: 2.5rem; margin-bottom: 2rem; color: var(--text-dark); max-width: 1000px; margin-left: auto; margin-right: auto;">
+                    <span>Project Talargos</span>
+                    <span id="talargos-arrow" style="font-size: 1.5rem; transition: transform 0.3s ease; transform: rotate(-90deg);">▼</span>
+                </h2>
+
+                <div id="talargos-content" style="display: none;">
+                    <nav style="background: white; padding: 1.5rem 2rem; border-radius: 10px; box-shadow: var(--shadow); max-width: 1000px; margin: 0 auto; position: sticky; top: 80px; z-index: 100;">
+                        <ul style="display: flex; justify-content: space-around; list-style: none; padding: 0; margin: 0; flex-wrap: wrap; gap: 1rem;">
+                            <li style="flex: 1; text-align: center;"><a href="#updates" class="talargos-nav-link" style="text-decoration: none; color: var(--text-dark); font-weight: 500; transition: all 0.3s ease; display: block; padding: 0.75rem; border-radius: 8px;">Updates</a></li>
+                            <li style="flex: 1; text-align: center;"><a href="#overview" class="talargos-nav-link" style="text-decoration: none; color: var(--text-dark); font-weight: 500; transition: all 0.3s ease; display: block; padding: 0.75rem; border-radius: 8px;">Overview</a></li>
+                            <li style="flex: 1; text-align: center;"><a href="#deep-dives" class="talargos-nav-link" style="text-decoration: none; color: var(--text-dark); font-weight: 500; transition: all 0.3s ease; display: block; padding: 0.75rem; border-radius: 8px;">Technical Deep Dives</a></li>
+                            <li style="flex: 1; text-align: center;"><a href="#lessons" class="talargos-nav-link" style="text-decoration: none; color: var(--text-dark); font-weight: 500; transition: all 0.3s ease; display: block; padding: 0.75rem; border-radius: 8px;">Lessons Learned</a></li>
+                        </ul>
+                    </nav>
+
+            <!-- Updates Section -->
+            <div id="updates" style="background: white; padding: 3rem; border-radius: 15px; box-shadow: var(--shadow); margin-top: 3rem; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                <h2 style="color: var(--primary-color); font-size: 2rem; margin-bottom: 1.5rem;">Updates</h2>
+                <div style="border-left: 4px solid var(--primary-color); padding-left: 1.5rem; margin-bottom: 2rem;">
+                    <h3 style="color: var(--text-dark); font-size: 1.25rem; margin-bottom: 0.5rem;">October 2025 - Project Kickoff</h3>
+                    <p style="line-height: 1.8; color: #666; margin-bottom: 0.5rem;">
+                        Initial architecture design completed. Technology stack selected. Development environment setup and first proof-of-concept implemented to validate core architectural assumptions.
+                    </p>
+                </div>
+                <div style="border-left: 4px solid var(--primary-color); padding-left: 1.5rem; margin-bottom: 2rem;">
+                    <h3 style="color: var(--text-dark); font-size: 1.25rem; margin-bottom: 0.5rem;">Coming Soon</h3>
+                    <p style="line-height: 1.8; color: #666; margin-bottom: 0.5rem;">
+                        Regular updates on milestones, development progress, technical challenges solved, and key learnings will be posted here as the project evolves.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Overview Section -->
+            <div id="overview" style="background: white; padding: 3rem; border-radius: 15px; box-shadow: var(--shadow); margin-top: 3rem; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                <h2 style="color: var(--primary-color); font-size: 2rem; margin-bottom: 1.5rem;">Project Overview</h2>
+
+                <h3 style="color: var(--text-dark); font-size: 1.5rem; margin-bottom: 1rem;">What Is It?</h3>
+                <p style="line-height: 1.8; color: #666; margin-bottom: 1rem;">
+                    <strong>Arctic Environmental Monitor: A LoRa-Based Sensor Network for Harsh Environments</strong>
+                </p>
+                <p style="line-height: 1.8; color: #666; margin-bottom: 1rem;">
+                    A distributed IoT sensor network designed to operate autonomously in extreme conditions. The system consists of battery-powered ESP32 sensor nodes communicating via LoRa (Long Range) radio to a central Raspberry Pi gateway that processes data locally and provides real-time visualization.
+                </p>
+
+                <h4 style="color: var(--text-dark); font-size: 1.2rem; margin-bottom: 0.75rem; margin-top: 1.5rem;">Key Components:</h4>
+                <ul style="line-height: 1.8; color: #666; margin-bottom: 1rem; margin-left: 1.5rem;">
+                    <li>Remote sensor nodes (ESP32 + LoRa + environmental sensors)</li>
+                    <li>Raspberry Pi edge gateway with LoRa HAT</li>
+                    <li>Real-time web dashboard</li>
+                    <li>Offline-first architecture</li>
+                </ul>
+
+                <h4 style="color: var(--text-dark); font-size: 1.2rem; margin-bottom: 0.75rem; margin-top: 1.5rem;">Measured Parameters:</h4>
+                <ul style="line-height: 1.8; color: #666; margin-bottom: 1rem; margin-left: 1.5rem;">
+                    <li>Temperature, humidity, barometric pressure</li>
+                    <li>Motion detection</li>
+                    <li>Ambient sound levels</li>
+                    <li>Battery voltage and system health</li>
+                </ul>
+
+                <h4 style="color: var(--text-dark); font-size: 1.2rem; margin-bottom: 0.75rem; margin-top: 1.5rem;">Target Specifications:</h4>
+                <ul style="line-height: 1.8; color: #666; margin-bottom: 1rem; margin-left: 1.5rem;">
+                    <li>Operating range: -20°C to +60°C</li>
+                    <li>Communication range: 2-10km line of sight</li>
+                    <li>Battery life: 90+ days per node</li>
+                    <li>Weatherproof IP65-rated enclosures</li>
+                </ul>
+
+                <h3 style="color: var(--text-dark); font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">The Name: Talargos</h3>
+                <p style="line-height: 1.8; color: #666; margin-bottom: 1rem; font-style: italic; background: var(--light-bg); padding: 1.5rem; border-radius: 10px; border-left: 4px solid var(--primary-color);">
+                    In Greek mythology, <strong>Talos</strong> was a giant bronze automaton who tirelessly patrolled the shores of Crete, protecting the island from invaders. Never resting, never failing, this mechanical guardian circled the island three times daily with unwavering vigilance. Meanwhile, <strong>Argos Panoptes</strong> (meaning "all-seeing") was a giant with a hundred eyes, ensuring that some eyes always remained open, watching, observing, never allowing threats to go unnoticed.
+                </p>
+                <p style="line-height: 1.8; color: #666; margin-bottom: 1rem;">
+                    Project Talargos embodies both guardians: the tireless automation of Talos and the omniscient observation of Argos. Like these mythological sentinels, this system never sleeps, constantly monitoring, detecting, and protecting with hundreds of data points acting as ever-watchful eyes across distributed nodes.
+                </p>
+
+                <h3 style="color: var(--text-dark); font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">Why This Project?</h3>
+                <h4 style="color: var(--text-dark); font-size: 1.2rem; margin-bottom: 0.75rem; margin-top: 1.5rem;">The Problem</h4>
+                <p style="line-height: 1.8; color: #666; margin-bottom: 1rem;">
+                    Traditional environmental monitoring systems fail in remote deployments due to:
+                </p>
+                <ol style="line-height: 1.8; color: #666; margin-bottom: 1rem; margin-left: 1.5rem;">
+                    <li><strong>No Connectivity</strong>: Cellular and WiFi infrastructure unavailable in remote areas</li>
+                    <li><strong>Power Constraints</strong>: Frequent battery replacements are costly and impractical</li>
+                    <li><strong>Harsh Conditions</strong>: Standard electronics fail in extreme temperatures and moisture</li>
+                    <li><strong>High Costs</strong>: Satellite communication has prohibitive recurring fees</li>
+                    <li><strong>Latency</strong>: Cloud-dependent systems can't provide immediate local alerts</li>
+                </ol>
+
+                <h4 style="color: var(--text-dark); font-size: 1.2rem; margin-bottom: 0.75rem; margin-top: 1.5rem;">Applications</h4>
+                <p style="line-height: 1.8; color: #666; margin-bottom: 0.5rem;"><strong>Defense & Security:</strong></p>
+                <ul style="line-height: 1.8; color: #666; margin-bottom: 1rem; margin-left: 1.5rem;">
+                    <li>Perimeter monitoring for installations</li>
+                    <li>Border surveillance in remote areas</li>
+                    <li>Tactical situational awareness</li>
+                </ul>
+                <p style="line-height: 1.8; color: #666; margin-bottom: 0.5rem;"><strong>Environmental Research:</strong></p>
+                <ul style="line-height: 1.8; color: #666; margin-bottom: 1rem; margin-left: 1.5rem;">
+                    <li>Wildlife habitat monitoring</li>
+                    <li>Climate change data collection</li>
+                    <li>Remote watershed monitoring</li>
+                </ul>
+                <p style="line-height: 1.8; color: #666; margin-bottom: 0.5rem;"><strong>Infrastructure:</strong></p>
+                <ul style="line-height: 1.8; color: #666; margin-bottom: 1rem; margin-left: 1.5rem;">
+                    <li>Pipeline monitoring in remote areas</li>
+                    <li>Bridge structural health monitoring</li>
+                    <li>Avalanche detection systems</li>
+                </ul>
+
+                <h3 style="color: var(--text-dark); font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">Technology Stack</h3>
+                <h4 style="color: var(--text-dark); font-size: 1.2rem; margin-bottom: 0.75rem; margin-top: 1.5rem;">Hardware:</h4>
+                <ul style="line-height: 1.8; color: #666; margin-bottom: 1rem; margin-left: 1.5rem;">
+                    <li><strong>Sensor Nodes</strong>: LILYGO TTGO LoRa32 V2.1 (ESP32 + SX1276 LoRa radio)</li>
+                    <li><strong>Gateway</strong>: Raspberry Pi 4 with Waveshare SX1262 LoRa HAT</li>
+                    <li><strong>Sensors</strong>: BME280 (temp/humidity/pressure), HC-SR501 PIR (motion), MAX4466 (sound)</li>
+                    <li><strong>Power</strong>: 18650 Li-ion batteries with TP4056 charging modules</li>
+                </ul>
+
+                <h4 style="color: var(--text-dark); font-size: 1.2rem; margin-bottom: 0.75rem; margin-top: 1.5rem;">Software:</h4>
+                <ul style="line-height: 1.8; color: #666; margin-bottom: 1rem; margin-left: 1.5rem;">
+                    <li><strong>Firmware</strong>: C++ (Arduino framework for ESP32)</li>
+                    <li><strong>Gateway</strong>: Python 3.9+ (Flask, Flask-SocketIO)</li>
+                    <li><strong>Database</strong>: SQLite for local storage</li>
+                    <li><strong>Frontend</strong>: JavaScript (Leaflet.js for mapping, Chart.js for visualization)</li>
+                </ul>
+
+                <h3 style="color: var(--text-dark); font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">System Architecture</h3>
+                <pre style="background: #f5f5f5; padding: 1.5rem; border-radius: 8px; overflow-x: auto; line-height: 1.4; font-size: 0.85rem; margin-bottom: 1.5rem;">
+┌─────────────────────────────────────────┐
+│         SENSOR NODES (3-4x)            │
+│  ESP32 + LoRa Radio                     │
+│  • BME280: Temp/Humidity/Pressure       │
+│  • PIR: Motion Detection                │
+│  • MAX4466: Sound Monitoring            │
+│  • 18650 Battery (90+ day life)         │
+└─────────────────────────────────────────┘
+                  │
+            LoRa 915MHz
+           (2-10km range)
+                  ↓
+┌─────────────────────────────────────────┐
+│      RASPBERRY PI GATEWAY               │
+│  • LoRa HAT (receives sensor data)      │
+│  • Python Backend (data processing)     │
+│  • SQLite Database (local storage)      │
+│  • Anomaly Detection Engine             │
+│  • WebSocket Server (real-time push)    │
+└─────────────────────────────────────────┘
+                  │
+          HTTP / WebSocket
+                  ↓
+┌─────────────────────────────────────────┐
+│         WEB DASHBOARD                   │
+│  • Interactive map (Leaflet.js)         │
+│  • Real-time charts (Chart.js)          │
+│  • Live updates via WebSocket           │
+│  • Offline-capable (Service Worker)     │
+│  • Alert notifications                  │
+└─────────────────────────────────────────┘</pre>
+
+                <h4 style="color: var(--text-dark); font-size: 1.2rem; margin-bottom: 0.75rem; margin-top: 1.5rem;">Data Flow:</h4>
+                <ol style="line-height: 1.8; color: #666; margin-bottom: 1rem; margin-left: 1.5rem;">
+                    <li>Sensor nodes wake from deep sleep every 5 minutes (or on motion trigger)</li>
+                    <li>Collect data from all sensors (~500ms)</li>
+                    <li>Construct JSON packet with metadata</li>
+                    <li>Transmit via LoRa (~2 seconds airtime)</li>
+                    <li>Gateway receives, validates, and stores data</li>
+                    <li>Run anomaly detection algorithms</li>
+                    <li>Push updates to web clients via WebSocket</li>
+                    <li>Dashboard renders real-time visualization</li>
+                </ol>
+            </div>
+
+            <!-- Technical Deep Dives Section -->
+            <div id="deep-dives" style="background: white; padding: 3rem; border-radius: 15px; box-shadow: var(--shadow); margin-top: 3rem; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                <h2 style="color: var(--primary-color); font-size: 2rem; margin-bottom: 1.5rem;">Technical Deep Dives</h2>
+
+                <h3 style="color: var(--text-dark); font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">Why LoRa?</h3>
+                <p style="line-height: 1.8; color: #666; margin-bottom: 1rem;">
+                    Comparison with alternatives:
+                </p>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 1.5rem;">
+                    <thead>
+                        <tr style="background: var(--light-bg);">
+                            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Technology</th>
+                            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Range</th>
+                            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Power (sleep)</th>
+                            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Cost</th>
+                            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Bandwidth</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>LoRa</strong></td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">2-10km</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">10µA</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Low</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">5 kbps</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">WiFi</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">50-100m</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">15mA</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Low</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">150 Mbps</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Bluetooth</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">10-100m</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">1µA</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Low</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">2 Mbps</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Cellular</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">10km+</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">5mA</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">High recurring</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">1 Mbps</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="line-height: 1.8; color: #666; margin-bottom: 0.5rem;"><strong>LoRa advantages:</strong></p>
+                <ul style="line-height: 1.8; color: #666; margin-bottom: 1rem; margin-left: 1.5rem;">
+                    <li>10km+ range enables sparse deployment</li>
+                    <li>Ultra-low power for 90-day battery life</li>
+                    <li>No recurring costs (unlicensed spectrum)</li>
+                    <li>Better obstacle penetration (sub-GHz)</li>
+                    <li>Simple infrastructure (single gateway)</li>
+                </ul>
+                <p style="line-height: 1.8; color: #666; margin-bottom: 1.5rem;">
+                    <strong>Trade-off:</strong> Low bandwidth limits to telemetry only (no video/images)
+                </p>
+
+                <h3 style="color: var(--text-dark); font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">Why Edge Computing?</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div style="padding: 1.5rem; background: #fff5f5; border-radius: 8px; border-left: 4px solid #ff6b6b;">
+                        <h4 style="color: var(--text-dark); font-size: 1.1rem; margin-bottom: 0.75rem;">Cloud-First Architecture:</h4>
+                        <pre style="background: white; padding: 1rem; border-radius: 4px; font-size: 0.85rem; margin-bottom: 0.75rem; overflow-x: auto;">Sensor → Gateway → Internet
+  → Cloud → Dashboard</pre>
+                        <ul style="line-height: 1.8; color: #666; margin-left: 1.5rem; font-size: 0.9rem;">
+                            <li>Requires internet connectivity</li>
+                            <li>Monthly hosting costs</li>
+                            <li>500-2000ms latency</li>
+                            <li>Single point of failure</li>
+                        </ul>
+                    </div>
+                    <div style="padding: 1.5rem; background: #f0fff4; border-radius: 8px; border-left: 4px solid #51cf66;">
+                        <h4 style="color: var(--text-dark); font-size: 1.1rem; margin-bottom: 0.75rem;">Edge Computing (Chosen):</h4>
+                        <pre style="background: white; padding: 1rem; border-radius: 4px; font-size: 0.85rem; margin-bottom: 0.75rem; overflow-x: auto;">Sensor → Gateway (local)
+  → Local Dashboard
+  ↓ (optional)
+Cloud Archive</pre>
+                        <ul style="line-height: 1.8; color: #666; margin-left: 1.5rem; font-size: 0.9rem;">
+                            <li>Works completely offline</li>
+                            <li>&lt;1 second latency</li>
+                            <li>No recurring costs</li>
+                            <li>Data sovereignty</li>
+                            <li>Real-time local alerts</li>
+                        </ul>
+                    </div>
+                </div>
+                <p style="line-height: 1.8; color: #666; margin-bottom: 1.5rem; font-style: italic; background: var(--light-bg); padding: 1rem; border-radius: 8px;">
+                    <strong>Key benefit:</strong> Critical for remote/tactical deployments where connectivity is unreliable or unavailable.
+                </p>
+
+                <h3 style="color: var(--text-dark); font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">Why ESP32?</h3>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 1.5rem;">
+                    <thead>
+                        <tr style="background: var(--light-bg);">
+                            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Platform</th>
+                            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Power (sleep)</th>
+                            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Flash</th>
+                            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Cost</th>
+                            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">LoRa</th>
+                            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">WiFi/BT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;"><strong>ESP32</strong></td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">10µA</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">4MB</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$8</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">✓</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">✓</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Arduino Uno</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">50mA</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">32KB</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$25</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">✗</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">✗</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">STM32</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">2µA</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">64KB</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$3</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">✗</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">✗</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="color: var(--text-dark); font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">Power Management Strategy</h3>
+                <p style="line-height: 1.8; color: #666; margin-bottom: 1rem;">
+                    <strong>Target:</strong> 90+ days on single 18650 battery (3500mAh)
+                </p>
+                <pre style="background: #f5f5f5; padding: 1.5rem; border-radius: 8px; overflow-x: auto; line-height: 1.4; font-size: 0.85rem; margin-bottom: 1.5rem;">
+Component             Active Current    Duty Cycle    Avg Current
+------------------------------------------------------------------
+ESP32 Active          160 mA           0.67%         1.07 mA
+ESP32 Deep Sleep      10 µA            99.33%        0.01 mA
+BME280                1.8 mA           0.17%         0.003 mA
+PIR Sensor            65 µA            100%          0.065 mA
+LoRa TX (20dBm)       120 mA           0.07%         0.08 mA
+Voltage Regulator     50 µA            100%          0.05 mA
+------------------------------------------------------------------
+TOTAL AVERAGE                                        1.28 mA
+
+Battery Life = 3500 mAh / 1.28 mA = 114 days ✓</pre>
+                <p style="line-height: 1.8; color: #666; margin-bottom: 0.5rem;"><strong>Key strategies:</strong></p>
+                <ul style="line-height: 1.8; color: #666; margin-bottom: 1.5rem; margin-left: 1.5rem;">
+                    <li>ESP32 deep sleep between readings (10µA vs 160mA active)</li>
+                    <li>Wake on timer (5 minutes) or motion interrupt (30 seconds)</li>
+                    <li>Power down all peripherals during sleep</li>
+                    <li>Adaptive sampling rates based on activity</li>
+                </ul>
+
+                <h3 style="color: var(--text-dark); font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">Real-Time Dashboard</h3>
+                <p style="line-height: 1.8; color: #666; margin-bottom: 1rem;">
+                    <strong>Why WebSockets over HTTP polling:</strong>
+                </p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                    <div style="padding: 1.5rem; background: #fff5f5; border-radius: 8px;">
+                        <h4 style="color: var(--text-dark); font-size: 1.1rem; margin-bottom: 0.75rem;">HTTP Polling:</h4>
+                        <pre style="background: white; padding: 1rem; border-radius: 4px; font-size: 0.8rem; margin-bottom: 0.75rem; overflow-x: auto;">setInterval(() =>
+  fetch('/api/latest'),
+  2000);</pre>
+                        <ul style="line-height: 1.8; color: #666; margin-left: 1.5rem; font-size: 0.9rem;">
+                            <li>2-second latency</li>
+                            <li>Wastes bandwidth</li>
+                            <li>Server load scales linearly</li>
+                        </ul>
+                    </div>
+                    <div style="padding: 1.5rem; background: #f0fff4; border-radius: 8px;">
+                        <h4 style="color: var(--text-dark); font-size: 1.1rem; margin-bottom: 0.75rem;">WebSockets (Chosen):</h4>
+                        <pre style="background: white; padding: 1rem; border-radius: 4px; font-size: 0.8rem; margin-bottom: 0.75rem; overflow-x: auto;">socket.on('sensor_update',
+  (data) =>
+  updateDashboard(data));</pre>
+                        <ul style="line-height: 1.8; color: #666; margin-left: 1.5rem; font-size: 0.9rem;">
+                            <li>&lt;100ms latency</li>
+                            <li>Only transmits changes</li>
+                            <li>Scales to 100+ clients</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lessons Learned Section -->
+            <div id="lessons" style="background: white; padding: 3rem; border-radius: 15px; box-shadow: var(--shadow); margin-top: 3rem; max-width: 1000px; margin-left: auto; margin-right: auto;">
+                <h2 style="color: var(--primary-color); font-size: 2rem; margin-bottom: 1.5rem;">Anticipated Challenges</h2>
+
+                <div style="background: var(--light-bg); padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; border-left: 4px solid var(--primary-color);">
+                    <h3 style="color: var(--text-dark); font-size: 1.3rem; margin-bottom: 0.75rem;">1. Power Management in Cold Weather</h3>
+                    <p style="line-height: 1.8; color: #666; margin-bottom: 0.75rem;">
+                        <strong>Problem:</strong> Li-ion batteries lose 50% capacity at -20°C
+                    </p>
+                    <p style="line-height: 1.8; color: #666; margin-bottom: 0.5rem;"><strong>Planned solutions:</strong></p>
+                    <ul style="line-height: 1.8; color: #666; margin-left: 1.5rem;">
+                        <li>Use LiFePO4 chemistry (better cold performance)</li>
+                        <li>Add low-dropout voltage regulator</li>
+                        <li>Include capacitor bank for TX burst current</li>
+                        <li>Account for reduced capacity in battery life calculations</li>
+                    </ul>
+                </div>
+
+                <div style="background: var(--light-bg); padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; border-left: 4px solid var(--primary-color);">
+                    <h3 style="color: var(--text-dark); font-size: 1.3rem; margin-bottom: 0.75rem;">2. LoRa Packet Collisions</h3>
+                    <p style="line-height: 1.8; color: #666; margin-bottom: 0.75rem;">
+                        <strong>Problem:</strong> Multiple nodes transmitting simultaneously causes packet loss
+                    </p>
+                    <p style="line-height: 1.8; color: #666; margin-bottom: 0.5rem;"><strong>Planned solutions:</strong></p>
+                    <ul style="line-height: 1.8; color: #666; margin-left: 1.5rem;">
+                        <li>Random jitter before transmission (0-10 seconds)</li>
+                        <li>TDMA (Time Division Multiple Access) with assigned time slots</li>
+                        <li>Monitor packet success rate and adjust strategy</li>
+                    </ul>
+                </div>
+
+                <div style="background: var(--light-bg); padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; border-left: 4px solid var(--primary-color);">
+                    <h3 style="color: var(--text-dark); font-size: 1.3rem; margin-bottom: 0.75rem;">3. Time Synchronization</h3>
+                    <p style="line-height: 1.8; color: #666; margin-bottom: 0.75rem;">
+                        <strong>Problem:</strong> ESP32 RTC drifts ~1 second/hour without calibration
+                    </p>
+                    <p style="line-height: 1.8; color: #666; margin-bottom: 0.5rem;"><strong>Planned solutions:</strong></p>
+                    <ul style="line-height: 1.8; color: #666; margin-left: 1.5rem;">
+                        <li>Gateway broadcasts time via LoRa</li>
+                        <li>Nodes synchronize on wake from sleep</li>
+                        <li>Fallback to sequence numbers if time sync fails</li>
+                    </ul>
+                </div>
+
+                <div style="background: var(--light-bg); padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; border-left: 4px solid var(--primary-color);">
+                    <h3 style="color: var(--text-dark); font-size: 1.3rem; margin-bottom: 0.75rem;">4. Waterproofing</h3>
+                    <p style="line-height: 1.8; color: #666; margin-bottom: 0.75rem;">
+                        <strong>Problem:</strong> Moisture ingress can short electronics
+                    </p>
+                    <p style="line-height: 1.8; color: #666; margin-bottom: 0.5rem;"><strong>Planned solutions:</strong></p>
+                    <ul style="line-height: 1.8; color: #666; margin-left: 1.5rem;">
+                        <li>IP65-rated enclosures</li>
+                        <li>Cable glands for wire entries</li>
+                        <li>Silica gel desiccant packets</li>
+                        <li>Conformal coating on PCBs</li>
+                        <li>Test in freezer with condensation</li>
+                    </ul>
+                </div>
+
+                <div style="background: var(--light-bg); padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem; border-left: 4px solid var(--primary-color);">
+                    <h3 style="color: var(--text-dark); font-size: 1.3rem; margin-bottom: 0.75rem;">5. Database Performance</h3>
+                    <p style="line-height: 1.8; color: #666; margin-bottom: 0.75rem;">
+                        <strong>Problem:</strong> SQLite may slow with millions of readings
+                    </p>
+                    <p style="line-height: 1.8; color: #666; margin-bottom: 0.5rem;"><strong>Planned solutions:</strong></p>
+                    <ul style="line-height: 1.8; color: #666; margin-left: 1.5rem;">
+                        <li>Create composite indexes on timestamp and node_id</li>
+                        <li>Implement data decimation (full resolution for 7 days, aggregated after)</li>
+                        <li>Migration path to InfluxDB if needed for scale</li>
+                    </ul>
+                </div>
+
+                <h2 style="color: var(--primary-color); font-size: 2rem; margin-bottom: 1.5rem; margin-top: 3rem;">Project Plan</h2>
+
+                <h3 style="color: var(--text-dark); font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">Bill of Materials</h3>
+                <p style="line-height: 1.8; color: #666; margin-bottom: 1rem;">
+                    <strong>Estimated Total: $285</strong>
+                </p>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 2rem;">
+                    <thead>
+                        <tr style="background: var(--light-bg);">
+                            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Component</th>
+                            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Quantity</th>
+                            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Unit Cost</th>
+                            <th style="padding: 0.75rem; text-align: left; border: 1px solid #ddd;">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">TTGO LoRa32 V2.1 boards</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">4</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$18</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$72</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Raspberry Pi 4 (4GB) + accessories</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">1 kit</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$100</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$100</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Waveshare LoRa HAT</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">1</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$35</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$35</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">BME280 sensors</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">4</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$5</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$20</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">PIR motion sensors</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">4</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$3</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$12</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">18650 batteries</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">4</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$5</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$20</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Waterproof enclosures</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">4</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$8</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$32</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">Antennas, wires, misc</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">-</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">-</td>
+                            <td style="padding: 0.75rem; border: 1px solid #ddd;">$30</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3 style="color: var(--text-dark); font-size: 1.5rem; margin-bottom: 1rem; margin-top: 2rem;">Success Metrics</h3>
+                <h4 style="color: var(--text-dark); font-size: 1.2rem; margin-bottom: 0.75rem; margin-top: 1.5rem;">Technical Goals:</h4>
+                <ul style="line-height: 1.8; color: #666; margin-bottom: 1.5rem; margin-left: 1.5rem;">
+                    <li>90+ day battery life per node</li>
+                    <li>2km+ communication range (line of sight)</li>
+                    <li>Operation at -20°C for 48+ hours</li>
+                    <li>&lt;1% packet loss under normal conditions</li>
+                    <li>&lt;1 second dashboard latency</li>
+                </ul>
+
+                <h4 style="color: var(--text-dark); font-size: 1.2rem; margin-bottom: 0.75rem; margin-top: 1.5rem;">Demonstrable Outcomes:</h4>
+                <ul style="line-height: 1.8; color: #666; margin-bottom: 1.5rem; margin-left: 1.5rem;">
+                    <li>Working prototype with 3+ nodes</li>
+                    <li>Real-time web dashboard</li>
+                    <li>Cold weather test documentation</li>
+                    <li>Range test results</li>
+                    <li>Battery life validation data</li>
+                    <li>GitHub repository with complete source code</li>
+                </ul>
+            </div>
+                </div>
+            </div>
+            <!-- End Project Talargos -->
+
+            <!-- Add more projects here -->
+
+        </div>
+    </section>
+
+    <style>
+        .talargos-nav-link:hover {
+            background-color: var(--primary-color) !important;
+            color: white !important;
+            transform: translateY(-2px);
+        }
+    </style>
+
+    <script>
+        function toggleProject(projectId) {
+            const content = document.getElementById(projectId + '-content');
+            const arrow = document.getElementById(projectId + '-arrow');
+
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                arrow.style.transform = 'rotate(0deg)';
+            } else {
+                content.style.display = 'none';
+                arrow.style.transform = 'rotate(-90deg)';
+            }
+        }
+    </script>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ivin Dysangco. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
