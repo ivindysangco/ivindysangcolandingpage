@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog - Ivin Dysangco</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Enhanced styles for personal blog */
+        .personal-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 300px;
+            padding: 3rem 2rem;
+            margin-top: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .personal-hero-content {
+            text-align: center;
+            max-width: 800px;
+            color: white;
+        }
+
+        .personal-hero .headline {
+            font-size: 2.5rem;
+        }
+
+        .blog-section-header {
+            cursor: pointer;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-dark);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .arrow-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            transform: rotate(-90deg);
+        }
+
+        .content-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .sticky-nav {
+            background: white;
+            padding: 1.5rem 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            max-width: 1000px;
+            margin: 0 auto 2rem;
+            position: sticky;
+            top: 80px;
+            z-index: 100;
+        }
+
+        .sticky-nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .sticky-nav li {
+            flex: 1;
+            text-align: center;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 0.75rem;
+            border-radius: 8px;
+        }
+
+        .nav-link:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .content-card {
+            background: var(--light-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.1) 100%);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .card-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .update-item {
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .update-title {
+            color: var(--text-dark);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .update-text {
+            line-height: 1.8;
+            color: #666;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .watch-specs {
+            border-top: 1px solid #ddd;
+            padding-top: 1rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .watch-specs p {
+            margin: 0.25rem 0;
+        }
+
+        .price-tier {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .price-tier-title {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Maintenance Mode Styles */
+        .maintenance-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 800px;
+            margin: 2rem auto;
+            box-shadow: var(--shadow);
+        }
+
+        .maintenance-box h3 {
+            color: var(--text-dark);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .maintenance-box p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">Ivin Dysangco</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="personal-hero">
+        <div class="personal-hero-content">
+            <h1 class="headline">Beyond the Code</h1>
+            <p class="subheadline">Adventures in culinary experiments, travel, and timekeeping</p>
+        </div>
+    </section>
+
+    <section style="background: var(--light-bg); padding: 5rem 2rem;">
+        <div class="container">
+
+            <!-- Culinary Experiments -->
+            <div style="margin-bottom: 3rem;">
+                <h2 class="blog-section-header" onclick="toggleSection('culinary')">
+                    <span>Culinary Experiments</span>
+                    <span id="culinary-arrow" class="arrow-icon">▼</span>
+                </h2>
+
+            <div id="culinary-content" style="display: none;">
+                <!-- Maintenance Mode Message -->
+                <div id="culinary-maintenance" class="maintenance-box" style="display: none;">
+                    <h3>🍳 Coming Soon</h3>
+                    <p id="culinary-maintenance-message"></p>
+                </div>
+
+                <!-- Regular Content -->
+                <div id="culinary-live-content">
+                    <nav class="sticky-nav">
+                        <ul>
+                            <li><a href="#culinary-updates" class="nav-link">Updates</a></li>
+                            <li><a href="#recipes" class="nav-link">Recipes</a></li>
+                            <li><a href="#techniques" class="nav-link">Techniques</a></li>
+                            <li><a href="#restaurants" class="nav-link">Reviews</a></li>
+                        </ul>
+                    </nav>
+
+                    <div id="culinary-updates" class="content-box">
+                        <h2 class="section-title">Latest Updates</h2>
+                        <div id="culinary-updates-content">
+                            <!-- Content rendered by JavaScript from culinary/culinary-data.js -->
+                        </div>
+                    </div>
+
+                    <div id="recipes" class="content-box">
+                        <h2 class="section-title">Recipe Chronicles</h2>
+                        <div id="recipes-grid" class="grid-layout">
+                            <!-- Content rendered by JavaScript from culinary/culinary-data.js -->
+                        </div>
+                    </div>
+
+                    <div id="techniques" class="content-box">
+                        <h2 class="section-title">Technique Deep Dives</h2>
+                        <p class="update-text" style="margin-bottom: 2rem;">
+                            Detailed explorations of cooking techniques, equipment, and the science behind why certain methods work.
+                        </p>
+                        <div id="techniques-content">
+                            <!-- Content rendered by JavaScript from culinary/culinary-data.js -->
+                        </div>
+                    </div>
+
+                    <div id="restaurants" class="content-box">
+                        <h2 class="section-title">Restaurant Reviews</h2>
+                        <div id="restaurants-content">
+                            <!-- Content rendered by JavaScript from culinary/culinary-data.js -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- End Culinary Experiments -->
+
+            <!-- Travel -->
+            <div style="margin-bottom: 3rem;">
+                <h2 class="blog-section-header" onclick="toggleSection('travel')">
+                    <span>Travel</span>
+                    <span id="travel-arrow" class="arrow-icon">▼</span>
+                </h2>
+
+            <div id="travel-content" style="display: none;">
+                <!-- Maintenance Mode Message -->
+                <div id="travel-maintenance" class="maintenance-box" style="display: none;">
+                    <h3>✈️ Coming Soon</h3>
+                    <p id="travel-maintenance-message"></p>
+                </div>
+
+                <!-- Regular Content -->
+                <div id="travel-live-content">
+                    <nav class="sticky-nav">
+                        <ul>
+                            <li><a href="#travel-updates" class="nav-link">Updates</a></li>
+                            <li><a href="#destinations" class="nav-link">Destinations</a></li>
+                            <li><a href="#travel-tips" class="nav-link">Tips</a></li>
+                        </ul>
+                    </nav>
+
+                    <div id="travel-updates" class="content-box">
+                        <h2 class="section-title">Recent Journeys</h2>
+                        <div id="travel-updates-content">
+                            <!-- Content rendered by JavaScript from travel/travel-data.js -->
+                        </div>
+                    </div>
+
+                    <div id="destinations" class="content-box">
+                        <h2 class="section-title">Destination Guides</h2>
+                        <div id="destinations-grid" class="grid-layout">
+                            <!-- Content rendered by JavaScript from travel/travel-data.js -->
+                        </div>
+                    </div>
+
+                    <div id="travel-tips" class="content-box">
+                        <h2 class="section-title">Tips & Lessons Learned</h2>
+                        <div id="travel-tips-content">
+                            <!-- Content rendered by JavaScript from travel/travel-data.js -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- End Travel -->
+
+            <!-- Horology -->
+            <div style="margin-bottom: 3rem;">
+                <h2 class="blog-section-header" onclick="toggleSection('horology')">
+                    <span>Horology</span>
+                    <span id="horology-arrow" class="arrow-icon">▼</span>
+                </h2>
+
+            <div id="horology-content" style="display: none;">
+                <!-- Maintenance Mode Message -->
+                <div id="horology-maintenance" class="maintenance-box" style="display: none;">
+                    <h3>⌚ Coming Soon</h3>
+                    <p id="horology-maintenance-message"></p>
+                </div>
+
+                <!-- Regular Content -->
+                <div id="horology-live-content">
+                    <nav class="sticky-nav">
+                        <ul>
+                            <li><a href="#horology-updates" class="nav-link">Updates</a></li>
+                            <li><a href="#collection" class="nav-link">Collection</a></li>
+                            <li><a href="#reviews" class="nav-link">Reviews</a></li>
+                            <li><a href="#guides" class="nav-link">Guides</a></li>
+                        </ul>
+                    </nav>
+
+                    <div id="horology-updates" class="content-box">
+                        <h2 class="section-title">Latest Updates</h2>
+                        <div id="horology-updates-content">
+                            <!-- Content rendered by JavaScript from horology/horology-data.js -->
+                        </div>
+                    </div>
+
+                    <div id="collection" class="content-box">
+                        <h2 class="section-title">My Collection</h2>
+                        <p class="update-text" style="margin-bottom: 2rem;">
+                            A curated selection of mechanical timepieces, each chosen for its unique character, engineering excellence, or personal significance.
+                        </p>
+                        <div id="collection-grid" class="grid-layout">
+                            <!-- Content rendered by JavaScript from horology/horology-data.js -->
+                        </div>
+                    </div>
+
+                    <div id="reviews" class="content-box">
+                        <h2 class="section-title">Watch Reviews</h2>
+                        <div id="reviews-content">
+                            <!-- Content rendered by JavaScript from horology/horology-data.js -->
+                        </div>
+                    </div>
+
+                    <div id="guides" class="content-box">
+                        <h2 class="section-title">Buying Guides</h2>
+                        <div id="guides-content">
+                            <!-- Content rendered by JavaScript from horology/horology-data.js -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <!-- End Horology -->
+
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ivin Dysangco. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="config.js"></script>
+    <script src="culinary/culinary-data.js"></script>
+    <script src="culinary/culinary-template.js"></script>
+    <script src="travel/travel-data.js"></script>
+    <script src="travel/travel-template.js"></script>
+    <script src="horology/horology-data.js"></script>
+    <script src="horology/horology-template.js"></script>
+    <script>
+        // Check if section is in maintenance mode
+        function checkMaintenanceMode(sectionId) {
+            const config = blogConfig[sectionId];
+            const maintenanceDiv = document.getElementById(sectionId + '-maintenance');
+            const liveContentDiv = document.getElementById(sectionId + '-live-content');
+            const maintenanceMessageP = document.getElementById(sectionId + '-maintenance-message');
+
+            if (config.maintenanceMode) {
+                // Show maintenance message, hide live content
+                maintenanceDiv.style.display = 'block';
+                liveContentDiv.style.display = 'none';
+                maintenanceMessageP.textContent = config.maintenanceMessage;
+            } else {
+                // Show live content, hide maintenance message
+                maintenanceDiv.style.display = 'none';
+                liveContentDiv.style.display = 'block';
+            }
+        }
+
+        function toggleSection(sectionId) {
+            const content = document.getElementById(sectionId + '-content');
+            const arrow = document.getElementById(sectionId + '-arrow');
+
+            if (content.style.display === 'none') {
+                content.style.display = 'block';
+                arrow.style.transform = 'rotate(0deg)';
+            } else {
+                content.style.display = 'none';
+                arrow.style.transform = 'rotate(-90deg)';
+            }
+        }
+
+        // Auto-expand section based on URL hash
+        window.addEventListener('DOMContentLoaded', () => {
+            // Check maintenance mode for each section
+            checkMaintenanceMode('culinary');
+            checkMaintenanceMode('travel');
+            checkMaintenanceMode('horology');
+
+            const hash = window.location.hash;
+
+            // If hash is #recipes, #culinary-updates, #techniques, or #restaurants
+            if (hash && (hash === '#recipes' || hash === '#culinary-updates' || hash === '#techniques' || hash === '#restaurants')) {
+                // Expand the culinary section
+                const culinaryContent = document.getElementById('culinary-content');
+                const culinaryArrow = document.getElementById('culinary-arrow');
+                culinaryContent.style.display = 'block';
+                culinaryArrow.style.transform = 'rotate(0deg)';
+
+                // Scroll to the hash after a brief delay to ensure content is rendered
+                setTimeout(() => {
+                    const element = document.getElementById(hash.substring(1));
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+            }
+
+            // Similar logic for travel section
+            if (hash && (hash === '#destinations' || hash === '#travel-updates' || hash === '#travel-tips')) {
+                const travelContent = document.getElementById('travel-content');
+                const travelArrow = document.getElementById('travel-arrow');
+                travelContent.style.display = 'block';
+                travelArrow.style.transform = 'rotate(0deg)';
+
+                setTimeout(() => {
+                    const element = document.getElementById(hash.substring(1));
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+            }
+
+            // Similar logic for horology section
+            if (hash && (hash === '#collection' || hash === '#horology-updates' || hash === '#reviews' || hash === '#guides')) {
+                const horologyContent = document.getElementById('horology-content');
+                const horologyArrow = document.getElementById('horology-arrow');
+                horologyContent.style.display = 'block';
+                horologyArrow.style.transform = 'rotate(0deg)';
+
+                setTimeout(() => {
+                    const element = document.getElementById(hash.substring(1));
+                    if (element) {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }, 100);
+            }
+        });
+    </script>
+</body>
+</html>

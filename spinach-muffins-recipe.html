@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Spinach Muffins with Yogurt - Ivin Dysangco</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .recipe-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .recipe-header {
+            background: linear-gradient(135deg, #11998E 0%, #38EF7D 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .recipe-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .recipe-meta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .meta-label {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-bottom: 0.25rem;
+        }
+
+        .meta-value {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .recipe-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+        }
+
+        .ingredient-group {
+            margin-bottom: 2rem;
+        }
+
+        .ingredient-group h3 {
+            color: var(--text-dark);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .ingredient-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .ingredient-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: baseline;
+        }
+
+        .ingredient-list li:last-child {
+            border-bottom: none;
+        }
+
+        .ingredient-list li::before {
+            content: "✓";
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-right: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .instruction-list {
+            counter-reset: step-counter;
+            list-style: none;
+            padding: 0;
+        }
+
+        .instruction-list li {
+            counter-increment: step-counter;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-left: 3rem;
+            line-height: 1.8;
+        }
+
+        .instruction-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--primary-color);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .notes-box {
+            background: #fff9e6;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .notes-box h3 {
+            color: #f57c00;
+            margin-bottom: 1rem;
+        }
+
+        .notes-box ul {
+            margin-left: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            transform: translateX(-5px);
+        }
+
+        .recipe-image-hero {
+            max-width: 900px;
+            margin: 2rem auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .recipe-hero-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .recipe-title {
+                font-size: 2rem;
+            }
+
+            .recipe-meta {
+                gap: 1rem;
+            }
+
+            .instruction-list li {
+                padding-left: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">Ivin Dysangco</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="personal-blog.html">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div style="margin-top: 80px; background: var(--light-bg); min-height: 100vh; padding: 3rem 0;">
+        <div class="recipe-container">
+            <a href="personal-blog.html#recipes" class="back-button">
+                ← Back to All Recipes
+            </a>
+
+            <div class="recipe-image-hero">
+                <img src="images/culinary/spinach-muffins/hero.jpg" alt="Healthy Spinach Muffins with Yogurt" class="recipe-hero-img">
+            </div>
+
+            <div class="recipe-header">
+                <h1 class="recipe-title">Healthy Spinach Muffins with Yogurt</h1>
+                <p style="font-size: 1.1rem; opacity: 0.95;">No Banana Version - Protein-Packed & Nutritious</p>
+                <div class="recipe-meta">
+                    <div class="meta-item">
+                        <span class="meta-label">Prep Time</span>
+                        <span class="meta-value">10 min</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Cook Time</span>
+                        <span class="meta-value">20 min</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Total Time</span>
+                        <span class="meta-value">30 min</span>
+                    </div>
+                    <div class="meta-item">
+                        <span class="meta-label">Difficulty</span>
+                        <span class="meta-value">Beginner</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-section">
+                <h2 class="section-title">Ingredients</h2>
+
+                <div class="ingredient-group">
+                    <h3>Wet Ingredients (blend in food processor/blender):</h3>
+                    <ul class="ingredient-list">
+                        <li>2 cups fresh baby spinach</li>
+                        <li>1 cup plain Greek yogurt (whole fat preferred)</li>
+                        <li>2 large eggs</li>
+                        <li>1/4 cup milk</li>
+                        <li>1/4-1/3 cup honey or maple syrup</li>
+                        <li>1 teaspoon vanilla extract</li>
+                    </ul>
+                </div>
+
+                <div class="ingredient-group">
+                    <h3>Dry Ingredients:</h3>
+                    <ul class="ingredient-list">
+                        <li>1 3/4 cups white whole wheat flour (or all-purpose flour)</li>
+                        <li>1 1/2 teaspoons baking powder</li>
+                        <li>1/2 teaspoon baking soda</li>
+                        <li>1/2 teaspoon cinnamon</li>
+                        <li>Pinch of salt</li>
+                    </ul>
+                </div>
+
+                <div class="ingredient-group">
+                    <h3>Optional Add-ins:</h3>
+                    <ul class="ingredient-list">
+                        <li>Chocolate chips</li>
+                        <li>Blueberries</li>
+                        <li>Raisins</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="recipe-section">
+                <h2 class="section-title">Instructions</h2>
+                <ol class="instruction-list">
+                    <li><strong>Preheat oven</strong> to 375°F (190°C). Grease a muffin tin or use muffin liners.</li>
+                    <li><strong>Blend wet ingredients:</strong> Add spinach, yogurt, eggs, milk, honey/maple syrup, and vanilla to a blender and blend until completely smooth and bright green.</li>
+                    <li><strong>Mix dry ingredients:</strong> In a large bowl, whisk together the flour, baking powder, baking soda, cinnamon, and salt.</li>
+                    <li><strong>Combine:</strong> Pour the wet green mixture into the dry ingredients and gently stir until just combined. Don't overmix - a few lumps are okay!</li>
+                    <li><strong>Add optional mix-ins:</strong> If using chocolate chips, blueberries, or raisins, gently fold them in now.</li>
+                    <li><strong>Fill muffin cups:</strong> Divide batter into muffin cups, filling about 2/3 full.</li>
+                    <li><strong>Bake:</strong> Bake for 18-20 minutes (or 12-14 minutes for mini muffins) until a toothpick comes out clean and tops are lightly golden.</li>
+                    <li><strong>Cool and enjoy:</strong> Let cool in the pan for 5 minutes, then transfer to a wire rack.</li>
+                </ol>
+            </div>
+
+            <div class="recipe-section">
+                <div class="notes-box">
+                    <h3>Important Notes & Tips</h3>
+                    <ul>
+                        <li><strong>Sweetness:</strong> Since yogurt isn't as sweet as banana, you'll need more sweetener (honey or maple syrup) to compensate. Start with 1/4 cup and taste the batter - add more if needed.</li>
+                        <li><strong>Moisture:</strong> The muffins will still be moist and fluffy thanks to the Greek yogurt, which also adds extra protein.</li>
+                        <li><strong>Color:</strong> Don't be alarmed by the bright green color - it's normal! The spinach flavor is very mild.</li>
+                        <li><strong>Storage:</strong> Store in an airtight container in the refrigerator for 3-4 days.</li>
+                        <li><strong>Freezing:</strong> These freeze beautifully! Freeze for up to 3 months. Thaw overnight in the fridge or microwave for 30-45 seconds.</li>
+                        <li><strong>Meal Prep:</strong> Perfect for making ahead. Double the batch and freeze half for quick breakfasts.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="recipe-section">
+                <h2 class="section-title">Nutrition Highlights</h2>
+                <p style="line-height: 1.8; color: #666;">
+                    These muffins are packed with nutrients from spinach (iron, vitamins A & K) and Greek yogurt (protein, calcium).
+                    Using whole wheat flour adds fiber, while the natural sweeteners keep them healthier than traditional muffins.
+                    Perfect for getting more vegetables into your diet in a delicious way!
+                </p>
+            </div>
+
+            <a href="personal-blog.html#recipes" class="back-button">
+                ← Back to All Recipes
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ivin Dysangco. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
