@@ -252,6 +252,105 @@
             font-size: 1.1rem;
             line-height: 1.6;
         }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            .personal-hero {
+                padding: 2rem 1rem;
+                min-height: 200px;
+            }
+
+            .personal-hero .headline {
+                font-size: 1.75rem;
+            }
+
+            .blog-section-header {
+                font-size: 1.75rem;
+                padding: 0 1rem;
+            }
+
+            .arrow-icon {
+                font-size: 1.25rem;
+            }
+
+            .content-box {
+                padding: 1.5rem;
+                margin: 1rem;
+            }
+
+            .sticky-nav {
+                padding: 1rem;
+                margin: 0 1rem 1rem 1rem;
+                top: 60px;
+            }
+
+            .sticky-nav ul {
+                gap: 0.5rem;
+            }
+
+            .nav-link {
+                padding: 0.5rem 0.25rem;
+                font-size: 0.9rem;
+            }
+
+            .grid-layout {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .card-title {
+                font-size: 1.1rem;
+            }
+
+            .update-title {
+                font-size: 1.1rem;
+            }
+
+            .maintenance-box {
+                padding: 2rem 1rem;
+                margin: 1rem;
+            }
+
+            .maintenance-box h3 {
+                font-size: 1.5rem;
+            }
+
+            .maintenance-box p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .personal-hero .headline {
+                font-size: 1.5rem;
+            }
+
+            .blog-section-header {
+                font-size: 1.5rem;
+            }
+
+            .content-box {
+                padding: 1rem;
+            }
+
+            .sticky-nav ul {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .sticky-nav li {
+                flex: none;
+                width: 100%;
+            }
+
+            .nav-link {
+                padding: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body>

@@ -181,16 +181,87 @@
         }
 
         @media (max-width: 768px) {
+            .recipe-container {
+                padding: 1rem;
+            }
+
             .recipe-title {
-                font-size: 2rem;
+                font-size: 1.75rem;
+            }
+
+            .recipe-header {
+                padding: 2rem 1.5rem;
             }
 
             .recipe-meta {
-                gap: 1rem;
+                gap: 0.75rem;
+                flex-direction: column;
+            }
+
+            .meta-item {
+                width: 100%;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .recipe-section {
+                padding: 1.5rem;
+            }
+
+            .ingredient-group h3 {
+                font-size: 1.1rem;
             }
 
             .instruction-list li {
                 padding-left: 2.5rem;
+                font-size: 0.95rem;
+            }
+
+            .instruction-list li::before {
+                width: 1.75rem;
+                height: 1.75rem;
+                font-size: 1rem;
+            }
+
+            .notes-box {
+                padding: 1rem;
+            }
+
+            .notes-box h3 {
+                font-size: 1.1rem;
+            }
+
+            .notes-box ul {
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .recipe-title {
+                font-size: 1.5rem;
+            }
+
+            .recipe-header p {
+                font-size: 1rem;
+            }
+
+            .meta-value {
+                font-size: 1rem;
+            }
+
+            .recipe-section {
+                padding: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+
+            .ingredient-list li,
+            .instruction-list li {
+                font-size: 0.9rem;
             }
         }
     </style>
