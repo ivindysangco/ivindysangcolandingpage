@@ -44,7 +44,7 @@ This broader definition of security reveals that warding off foreign threats req
 
 <strong>3. The New Arms Race: It's About Conventional Missiles, Not Just Nukes</strong>
 
-A primary driver for the $38 billion NORAD modernization is the emergence of new weapon systems developed by Russia and China. This new arms race is not about nuclear-armed ICBMs—it's about advanced, long-range conventionally armed missiles, including hypersonic and new-generation cruise missiles.
+A primary driver for the $38 billion NORAD modernization is the emergence of new weapon systems developed by Russia and China. This new arms race is not about nuclear-armed ICBMs. Instead, it's about advanced, long-range conventionally armed missiles, including hypersonic and new-generation cruise missiles.
 
 These weapons present a unique strategic challenge. While nuclear deterrence is considered a credible defense against a nuclear attack, it is not seen as effective against a more limited conventional strike. Russia and China are developing these non-nuclear options with a specific goal: to hold the North American homeland itself at risk, thereby preventing the United States from deploying its military forces to conflicts overseas. The strategy is to disrupt mobilization efforts and attack key infrastructure to stop a deployment before it even begins.
 
@@ -56,7 +56,7 @@ This reveals that NORAD modernization is not just about defending North American
 
 <strong>4. Follow the Money: Why a Hot War in the Arctic Is Still Bad for Business</strong>
 
-While a military conflict in the North American Arctic is not impossible—especially as a potential "spillover" from a war in Europe—powerful economic incentives work to maintain stability in the region. Despite strategic competition, all Arctic and near-Arctic states share a fundamental interest in avoiding hostilities that would disrupt commerce.
+While a military conflict in the North American Arctic is not impossible, especially as a potential "spillover" from a war in Europe, powerful economic incentives work to maintain stability in the region. Despite strategic competition, all Arctic and near-Arctic states share a fundamental interest in avoiding hostilities that would disrupt commerce.
 
 Russia and China, in particular, have compelling economic reasons to prevent military instability along the Northern Sea Route (NSR). Russia depends on the NSR to ship its vast natural resources to global markets, and any conflict would be disastrous for its economy. For its part, China is invested in the NSR becoming a stable shipping lane that significantly cuts transit time to Europe.
 
