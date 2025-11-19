@@ -18,5 +18,10 @@ const blogConfig = {
     horology: {
         maintenanceMode: true,   // Maintenance
         maintenanceMessage: "Horology section coming soon. Currently documenting watch collection and reviews."
+    },
+
+    thoughts: {
+        maintenanceMode: false,  // Live
+        maintenanceMessage: "Thoughts section coming soon. Currently drafting perspectives on product management and leadership."
     }
 };

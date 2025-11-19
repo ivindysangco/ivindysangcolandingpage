@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thoughts - Ivin Dysangco</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .thoughts-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 300px;
+            padding: 3rem 2rem;
+            margin-top: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .thoughts-hero-content {
+            text-align: center;
+            max-width: 800px;
+            color: white;
+        }
+
+        .thoughts-hero .headline {
+            font-size: 2.5rem;
+        }
+
+        .thoughts-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .thought-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .thought-date {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .thought-title {
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .thought-content {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .thought-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .thought-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .thought-content strong {
+            color: var(--text-dark);
+            font-size: 1.2rem;
+            display: block;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .thought-content blockquote {
+            background: var(--light-bg);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+        }
+
+        .thought-content blockquote em {
+            font-style: italic;
+        }
+
+        .thought-content a {
+            color: var(--primary-color);
+            text-decoration: none;
+            border-bottom: 1px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .thought-content a:hover {
+            color: var(--secondary-color);
+            border-bottom-color: var(--secondary-color);
+        }
+
+        .thought-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag-badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Maintenance Mode Styles */
+        .maintenance-box {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 800px;
+            margin: 2rem auto;
+            box-shadow: var(--shadow);
+        }
+
+        .maintenance-box h3 {
+            color: var(--text-dark);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .maintenance-box p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .thoughts-hero {
+                padding: 2rem 1rem;
+                min-height: 200px;
+            }
+
+            .thoughts-hero .headline {
+                font-size: 1.75rem;
+            }
+
+            .thoughts-container {
+                padding: 2rem 1rem;
+            }
+
+            .thought-item {
+                padding: 1.5rem;
+            }
+
+            .thought-title {
+                font-size: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .thoughts-hero .headline {
+                font-size: 1.5rem;
+            }
+
+            .thought-item {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo"><a href="index.html" style="text-decoration: none; color: inherit;">Ivin Dysangco</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#blog">Blog</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="thoughts-hero">
+        <div class="thoughts-hero-content">
+            <h1 class="headline">Thoughts</h1>
+            <p class="subheadline">Perspectives on product management, leadership, and bridging operational and technical expertise</p>
+        </div>
+    </section>
+
+    <section style="background: var(--light-bg); padding: 3rem 0;">
+        <!-- Maintenance Mode Message -->
+        <div id="thoughts-maintenance" class="maintenance-box" style="display: none;">
+            <h3>Coming Soon</h3>
+            <p id="thoughts-maintenance-message"></p>
+        </div>
+
+        <!-- Regular Content -->
+        <div id="thoughts-live-content" class="thoughts-container">
+            <div id="thoughts-content">
+                <!-- Content rendered by JavaScript from thoughts/thoughts-data.js -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ivin Dysangco. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="config.js"></script>
+    <script src="thoughts/thoughts-data.js"></script>
+    <script src="thoughts/thoughts-template.js"></script>
+    <script>
+        // Check if thoughts section is in maintenance mode
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof blogConfig !== 'undefined' && blogConfig.thoughts) {
+                const config = blogConfig.thoughts;
+                const maintenanceDiv = document.getElementById('thoughts-maintenance');
+                const liveContentDiv = document.getElementById('thoughts-live-content');
+                const maintenanceMessageP = document.getElementById('thoughts-maintenance-message');
+
+                if (config.maintenanceMode) {
+                    maintenanceDiv.style.display = 'block';
+                    liveContentDiv.style.display = 'none';
+                    maintenanceMessageP.textContent = config.maintenanceMessage;
+                } else {
+                    maintenanceDiv.style.display = 'none';
+                    liveContentDiv.style.display = 'block';
+                }
+            }
+        });
+    </script>
+</body>
+</html>
