@@ -14,14 +14,14 @@ function formatContent(content) {
         para = para.trim();
         if (!para) return '';
 
-        // Check if it's already wrapped in HTML tags
-        if (para.startsWith('<')) {
-            return para;
-        }
-
         // Check if it's a blockquote (starts with <em> and is a standalone quote)
         if (para.startsWith('<em>') && para.endsWith('</em>')) {
             return `<blockquote>${para}</blockquote>`;
+        }
+
+        // Check if it's already wrapped in HTML tags (but not <em>)
+        if (para.startsWith('<')) {
+            return para;
         }
 
         // Regular paragraph
