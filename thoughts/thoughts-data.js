@@ -12,6 +12,7 @@
 const thoughtsData = {
     thoughts: [
         {
+            id: "arctic-defense-truths",
             date: "November 2025",
             title: "Four Counter-Intuitive Truths About Arctic Defense",
             content: `When we think of Arctic defense, the images are often stark and cinematic: Russian bombers probing North American airspace, tense standoffs over a frozen landscape, and massive spending announcements. The recent commitment of $38 billion over 20 years to modernize the North American Aerospace Defense Command (NORAD) seems to fit this script perfectly. It's a narrative that feels like a Cold War redux, played out on a 21st-century stage.

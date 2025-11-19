@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a personal portfolio and blog website for Ivin Dysangco - a static site built with vanilla HTML, CSS, and JavaScript. The site features a professional landing page, technical blog, and personal blog with three collapsible sections: Culinary Experiments, Travel, and Horology.
+This is a personal portfolio and blog website for Ivin Dysangco - a static site built with vanilla HTML, CSS, and JavaScript. The site features a professional landing page, technical blog, thoughts blog (with pagination), and personal blog with three collapsible sections: Culinary Experiments, Travel, and Horology.
 
 ## Development Commands
 
@@ -58,6 +58,35 @@ Located in `personal-blog.html`, this page contains three collapsible sections:
    - Sections: Updates, Collection, Reviews, Buying Guides
 
 Each section can be independently toggled between live and maintenance mode via `config.js`.
+
+### Thoughts Blog Architecture
+
+The Thoughts blog uses a **paginated list + individual post** pattern:
+
+- **List page** (`thoughts-blog.html`): Shows paginated previews (5 per page)
+- **Post page** (`thought-post.html?id=...`): Shows full article with navigation arrows
+- **Data**: `thoughts/thoughts-data.js`
+- **Renderer**: `thoughts/thoughts-template.js`
+
+**Adding a new thought post:**
+1. Open `thoughts/thoughts-data.js`
+2. Add new entry at the TOP of the `thoughts` array (newest first)
+3. Include required fields: `id`, `date`, `title`, `content`, `tags`
+
+```javascript
+{
+    id: "your-post-slug",           // URL-friendly identifier
+    date: "November 2025",
+    title: "Your Post Title",
+    content: `Your content here...`, // Use backticks for multi-line
+    tags: ["tag1", "tag2"]
+}
+```
+
+**Navigation:**
+- Users see paginated list, click to read full post
+- Individual posts have ← Older / Newer → navigation arrows
+- "Back to all thoughts" link returns to list view
 
 ### Maintenance Mode System
 
@@ -146,11 +175,17 @@ Recipe detail pages (like `spinach-muffins-recipe.html`) can be created by:
 /
 ├── index.html                    # Landing page (hero, about, career, expertise)
 ├── technical-blog.html           # Technical blog (Project Talargos, etc.)
+├── thoughts-blog.html            # Thoughts blog list view (paginated)
+├── thought-post.html             # Individual thought post page
 ├── personal-blog.html            # Personal interests (culinary/travel/horology)
 ├── [recipe-name].html            # Individual recipe pages (as needed)
 ├── style.css                     # Global styles
 ├── script.js                     # Global JavaScript (navigation, animations)
 ├── config.js                     # Maintenance mode configuration
+│
+├── /thoughts/                    # Thoughts blog section
+│   ├── thoughts-data.js          # Content data (EDIT THIS)
+│   └── thoughts-template.js      # Renderer (handles list & post views)
 │
 ├── /culinary/                    # Culinary section
 │   ├── culinary-data.js          # Content data (EDIT THIS)
